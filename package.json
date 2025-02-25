@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start4": "npx ts-node problem4/problem4.ts",
-    "start5": "nodemon --exec npx ts-node problem5/src/index.ts",
-    "start6": "npx ts-node  problem5/src/config/config.ts"
+    "start4": "npx ts-node src/problem4/problem4.ts",
+    "start5": "nodemon --exec npx ts-node src/problem5/src/index.ts"
   },
   "dependencies": {
     "@types/cors": "^2.8.17",

@@ -40,7 +40,7 @@ DB_DIALECT=<db_dialect> (e.g., mysql)</code>
 **4. Use resources files:**  
 Use file in resources folder to import mySQL and Postman  
   
-**5.Run Problem 5:**  
+**5. Run Problem 5:**  
 Run the command: yarn start5  
 Test APIs with Postman:  
 Use Postman to send requests to the API endpoints defined in Problem 5.  
