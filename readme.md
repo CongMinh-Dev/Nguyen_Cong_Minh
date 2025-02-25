@@ -30,14 +30,14 @@ Download and install Postman from the official Postman website.
 **3. Create and config .env file:**  
 Create a .env file in the root directory of the project.  
 Add the following environment variables to the .env file, replacing the values with your MySQL configuration:  
-<pre>
+<pre><code>
 DB_DATABASE=<database_name>(e.g., db_student)  
 DB_USER=<username>  (e.g., root)  
 DB_PASS=<password>  (e.g., 1234)  
 DB_HOST=<host_address> (e.g., localhost)  
 DB_PORT=<port> (e.g., 3306)  
 DB_DIALECT=<dialect> (e.g., mysql)   
-</pre>
+</code></pre>
   
 **4. Use resources files:**  
 Use file in resources folder to import mySQL and Postman  
@@ -118,7 +118,7 @@ Use WebSocket or Server-Sent Events (SSE) to send updates to the website and upd
 **6. Execution Flow Diagram**  
 <pre>
 User -> Website -> API Server -> Website: Display score leaderboard.
-If update is desired, perform score increase or other actions, requiring login or registration.
+If want to update, increase score or other actions, requiring login or registration.
 User -> Website: Perform action.
 Website -> API Server: Send score update request (userId, score, timestamp, signature).
 API Server -> API Server: Verify signature and timestamp.
