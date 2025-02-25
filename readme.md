@@ -16,11 +16,11 @@ Watch testing in my link: https://youtu.be/insEW-p1IhM
   Run the command: yarn install  
   
   
-# Run Problem 4 
+# Problem 4 
 Run the command: yarn start4  
   
 
-# Install and configure Problem 5   
+# Problem 5   
 **1. Install MySQL:**  
 Download and install MySQL from the official MySQL website.  
   
@@ -30,15 +30,15 @@ Download and install Postman from the official Postman website.
 **3. Create and config .env file:**  
 Create a .env file in the root directory of the project.  
 Add the following environment variables to the .env file, replacing the values with your MySQL configuration:  
-DB_DATABASE=<database>(e.g., db_student)  
-DB_USER=<username>  
-DB_PASS=<password>  
+DB_DATABASE=<database_name>(e.g., db_student)  
+DB_USER=<db_username>  (e.g., root)  
+DB_PASS=<db_password>  (e.g., 1234)  
 DB_HOST=<host_address> (e.g., localhost)  
-DB_PORT=<port> (e.g., 3306)  
+DB_PORT=<db_port> (e.g., 3306)  
 DB_DIALECT=<dialect> (e.g., mysql)   
   
 **4. Use resources files:**  
-Use the files in the resources directory to create the database and sample data in MySQL.  
+Use file in resources folder to import mySQL and Postman  
   
 **5.Run Problem 5:**  
 Run the command: yarn start5  
@@ -46,7 +46,7 @@ Test APIs with Postman:
 Use Postman to send requests to the API endpoints defined in Problem 5.  
   
   
-# problem6:  
+# Problem6:  
 **Score Update Module Specifications**  
   
 **1. Overview**  
@@ -76,12 +76,12 @@ Live Leaderboard Update: While logged in, users can see leaderboard updates if t
   Method: POST, GET, PUT, DELETE  
   Format: application/json  
   Content:  
-  
   {  
   "userId": "string", // User ID (required)  
   "timestamp": "integer", // Action timestamp (required)  
   "signature": "string" // Authentication signature (required)  
   }  
+    
   **3.3. Response**  
   Status Codes:  
   200 OK: Successful update.  
@@ -96,24 +96,21 @@ Live Leaderboard Update: While logged in, users can see leaderboard updates if t
     
 **4. Authentication and Fraud Prevention**  
 **Signature:**  
-<pre>
-Use a secret key on the server.
-When a user performs an action, create a signature by hashing the userId, score, timestamp, and secret key parameters.
-Send this signature in the API request.
-The server recalculates the signature and compares it to the sent signature. If they don't match, the request is rejected.
-Timestamp Check:
-Check if the timestamp is within a valid time range to prevent replay attacks.
-</pre>
+Use a secret key on the server.  
+When a user performs an action, create a signature by hashing the userId, score, timestamp, and secret key parameters.  
+Send this signature in the API request.  
+The server recalculates the signature and compares it to the sent signature. If they don't match, the request is rejected.  
+  
+**Timestamp Check:**  
+Check if the timestamp is within a valid time range to prevent replay attacks.  
   
 **Rate Limiting:**  
 Limit the number of score update requests from a user within a specific time period.  
   
 **5. Live Leaderboard Update**  
-<pre>
-After a successful score update, update the leaderboard in memory or the database.
-Use WebSocket or Server-Sent Events (SSE) to send updates to the website and update the leaderboard live.
-</pre>
-  
+After a successful score update, update the leaderboard in memory or the database.  
+Use WebSocket or Server-Sent Events (SSE) to send updates to the website and update the leaderboard live.  
+    
 **6. Execution Flow Diagram**  
 <pre>
 User -> Website -> API Server -> Website: Display score leaderboard.
@@ -133,10 +130,9 @@ If Authentication Failed:
 </pre>
   
 **7. Additional Comments**  
-<pre>
-Use the joi or express-validator library to validate input data.
-Use redis to temporarily store the leaderboard and implement rate limiting.
-Add logging to track requests and errors.
-Write unit tests and integration tests to ensure code quality.
-Consider using a microservices architecture for large-scale applications.
-</pre>
+Use the joi or express-validator library to validate input data.  
+Use redis to temporarily store the leaderboard and implement rate limiting.  
+Add logging to track requests and errors.  
+Write unit tests and integration tests to ensure code quality.  
+Consider using a microservices architecture for large-scale applications.  
+
