@@ -23,10 +23,10 @@ function sum_to_n_c(n: number): number {
     }
     return n + sum_to_n_c(n - 1);
 }
-
+let number:number=3
 // example
-console.log("answer of func sum_to_n_a(3): ", sum_to_n_a(3))
-console.log("answer of func sum_to_n_b(3): ",sum_to_n_b(3))
-console.log("answer of func sum_to_n_c(3): ",sum_to_n_c(3))
+console.log( `answer of func sum_to_n_a(${number}):`, sum_to_n_a(number))
+console.log( `answer of func sum_to_n_b(${number}):`,sum_to_n_b(number))
+console.log( `answer of func sum_to_n_c(${number}):`,sum_to_n_c(number))
 
 

@@ -12,7 +12,7 @@ const createStudent = async (req: Request, res: Response) => {
     const schema = Joi.object({
         email: Joi.string().email().required(),
         full_name: Joi.string().required(),
-        age: Joi.number().required(),
+        age: Joi.number(),
 
     });
     const { error } = schema.validate(req.body);
@@ -119,7 +119,7 @@ const getStudentById = async (req: Request, res: Response) => {
     let { id } = req.params
     let idNumber: number = +id
     // validate
-    const schema = Joi.number();
+    const schema = Joi.number().required();
     const { error } = schema.validate(idNumber);
     if (error) {
         response(res, "", "ID must be a number", 400)
@@ -170,11 +170,11 @@ const updateScores = async (req: Request, res: Response) => {
     // validate
     const schema = Joi.object({
         id_student: Joi.number().required(),
-        maths: Joi.number().required(),
-        physics: Joi.number().required(),
-        chemistry: Joi.number().required(),
-        biology: Joi.number().required(),
-        literature: Joi.number().required(),
+        maths: Joi.number(),
+        physics: Joi.number(),
+        chemistry: Joi.number(),
+        biology: Joi.number(),
+        literature: Joi.number(),
     });
     const { error } = schema.validate(req.body);
     if (error) {
@@ -189,18 +189,38 @@ const updateScores = async (req: Request, res: Response) => {
         return id_student == item.dataValues.id_student
     })
     if (index != -1) {
-        let scores = {
-            maths: maths,
-            physics: physics,
-            chemistry: chemistry,
-            biology: biology,
-            literature: literature,
-
-        }
-        model.scores.update(scores, {
-            where: { id_student: id_student }
+        let arrScores = await model.scores.findAll({ attributes: ['id_student'] })
+        let indexScores = arrScores.findIndex((item) => {
+            return id_student == item.dataValues.id_student
         })
-        response(res, "", "Update scores Successful", 200)
+        if (indexScores != -1) {
+            let scores = {
+                maths: maths,
+                physics: physics,
+                chemistry: chemistry,
+                biology: biology,
+                literature: literature,
+
+            }
+            model.scores.update(scores, {
+                where: { id_student: id_student }
+            })
+            response(res, "", "Update scores Successful", 200)
+        } else {
+            let scores = {
+                id_student:id_student,
+                maths: maths,
+                physics: physics,
+                chemistry: chemistry,
+                biology: biology,
+                literature: literature,
+
+            }
+            await model.scores.create(scores);
+            response(res, "", "Create scores Successful", 200)
+        }
+
+
 
     } else { response(res, "", "ID is invalid ", 401) }
 
