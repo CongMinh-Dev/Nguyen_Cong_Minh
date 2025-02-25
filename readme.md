@@ -30,14 +30,12 @@ Download and install Postman from the official Postman website.
 **3. Create and config .env file:**  
 Create a .env file in the root directory of the project.  
 Add the following environment variables to the .env file, replacing the values with your MySQL configuration:  
-<code>
-DB_DATABASE=<database_name>(e.g., db_student)  
-DB_USER=<username>  (e.g., root)  
-DB_PASS=<password>  (e.g., 1234)  
-DB_HOST=<host_address> (e.g., localhost)  
-DB_PORT=<port> (e.g., 3306)  
-DB_DIALECT=<dialect> (e.g., mysql)   
-</code>
+<code>DB_DATABASE=<database_name>(e.g., db_student)  
+DB_USER=<db_username>  (e.g., root)  
+DB_PASS=<db_password>  (e.g., 1234)  
+DB_HOST=<db_host_address> (e.g., localhost)  
+DB_PORT=<db_port> (e.g., 3306)  
+DB_DIALECT=<db_dialect> (e.g., mysql)</code>  
   
 **4. Use resources files:**  
 Use file in resources folder to import mySQL and Postman  
