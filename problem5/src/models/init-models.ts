@@ -21,7 +21,7 @@ export type {
   studentCreationAttributes,
 };
 
-export default function initModels(sequelize: Sequelize) {
+export default  function initModels(sequelize: Sequelize) {
   const parent_student = _parent_student.initModel(sequelize);
   const scores = _scores.initModel(sequelize);
   const student = _student.initModel(sequelize);

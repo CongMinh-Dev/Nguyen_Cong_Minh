@@ -1,32 +1,31 @@
 
-## Link demo:  ##
+## Link demo:
 https://youtu.be/insEW-p1IhM
 
-# Clone my code #1 #
-1. Install Yarn (Windows):
+# Clone my code
+1. Install Yarn (Windows):  
+  Open Command Prompt or PowerShell as administrator.  
+  Run the command: npm install yarn  
+  
+2. Clone the project from Git:  
+  Use the command git clone <repository_url> to clone the project to your computer.  
+  
+3. Install dependencies:  
+  Navigate to the root directory of the project.  
+  Run the command: yarn install  
+  
 
-Open Command Prompt or PowerShell as administrator.
-Run the command: npm install yarn
-2. Clone the project from Git:
-
-Use the command git clone <repository_url> to clone the project to your computer.
-3. Install dependencies:
-
-Navigate to the root directory of the project.
-Run the command: yarn install
-
-# Run Problem 4  #1 #
-
+# Run Problem 4 
 Run the command: yarn start4
 
-# Install and configure Problem 5   #1 #
-## Install MySQL: ##
+# Install and configure Problem 5   
+## Install MySQL: 
 Download and install MySQL from the official MySQL website.
 
-## Install Postman: ##
+## Install Postman: 
 Download and install Postman from the official Postman website.
 
-## Create and config .env file: ##
+## Create and config .env file:
 Create a .env file in the root directory of the project.
 Add the following environment variables to the .env file, replacing the values with your MySQL configuration:
 DB_DATABASE=db_student
@@ -36,16 +35,16 @@ DB_HOST=<MySQL_host_address> (e.g., localhost)
 DB_PORT=<MySQL_port> (e.g., 3306)
 DB_DIALECT=mysql
 
-## Use resources files: ##
+## Use resources files: 
 Use the files in the resources directory to create the database and sample data in MySQL.
 
-## Run Problem 5: ##
+## Run Problem 5: 
 Run the command: yarn start5
 Test APIs with Postman:
 Use Postman to send requests to the API endpoints defined in Problem 5.
 
 
-# problem6: #1 #
+# problem6: 
 
 
 <pre><code>
