@@ -30,12 +30,14 @@ Download and install Postman from the official Postman website.
 **3. Create and config .env file:**  
 Create a .env file in the root directory of the project.  
 Add the following environment variables to the .env file, replacing the values with your MySQL configuration:  
+<pre>
 DB_DATABASE=<database_name>(e.g., db_student)  
-DB_USER=<db_username>  (e.g., root)  
-DB_PASS=<db_password>  (e.g., 1234)  
+DB_USER=<username>  (e.g., root)  
+DB_PASS=<password>  (e.g., 1234)  
 DB_HOST=<host_address> (e.g., localhost)  
-DB_PORT=<db_port> (e.g., 3306)  
+DB_PORT=<port> (e.g., 3306)  
 DB_DIALECT=<dialect> (e.g., mysql)   
+</pre>
   
 **4. Use resources files:**  
 Use file in resources folder to import mySQL and Postman  
@@ -61,6 +63,7 @@ Live Leaderboard Update: While logged in, users can see leaderboard updates if t
   
 **3. API Design**  
   **3.1. Endpoints**  
+  <pre>
   POST /api/user/sign-up  
   POST /api/user/sign-in  
   POST /api/user/user-Information  
@@ -71,7 +74,8 @@ Live Leaderboard Update: While logged in, users can see leaderboard updates if t
   GET /api/user/pagination-user  
   DELETE /api/user/del-user  
   PUT /api/scores/update-scores  
-  
+  </pre>
+    
   **3.2. Request**  
   Method: POST, GET, PUT, DELETE  
   Format: application/json  
